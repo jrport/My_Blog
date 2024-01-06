@@ -1,0 +1,15 @@
+<div>
+  <%= link_to "Edit it!", edit_post_path(@post) %>
+</div>
+<p>
+<%= @post.title %>
+</p>
+<p>
+<%= @post.body %>
+</p>
+<%= link_to "Delete this entry", post_path(@post), data: {
+  turbo_method: :delete,
+  turbo_confirm: "Are you sure" 
+}
+%>
+<%= link_to "Go home!", posts_path %>
