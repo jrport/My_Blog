@@ -8,34 +8,4 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
-  def create
-    @post = Post.new(article_params)
-
-    if @post.save
-      redirect_to @post
-    end
-  end
-  def edit 
-    @post = Post.find(params[:id])
-  end
-  def update
-    @post = Post.find(params[:id])
-
-    if @post.update(article_params)
-      redirect_to @post
-    end
-    
-  end
-  def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-
-    redirect_to root_path, status: :see_other
-  end
-
-  private
-
-  def article_params
-    params.require(:post).permit(:title, :body)
-  end
 end

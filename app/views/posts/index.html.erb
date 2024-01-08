@@ -1,12 +1,9 @@
-<h1>Posts</h1>
+<h1>For you</h1>
 <ul>
   <% @posts.each do |post| %>
-  <li>
-    <%= link_to post.title, post%>
-  </li>
-  <p style= "font-size: 12pt; margin: 0; border: 0; margin-bottom: 1rem;">
-  <%= post.body[0,24]+"..." %>
-  </p>
+    <li>
+      <%= link_to post.title, post %>
+      <p><%= post.content %></p>
+    </li>
   <% end %>
 </ul>
-<%= link_to "New post", new_post_path %>
