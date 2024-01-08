@@ -1,9 +1,0 @@
-<h1>For you</h1>
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-      <%= link_to post.title, post %>
-      <p><%= post.content %></p>
-    </li>
-  <% end %>
-</ul>
